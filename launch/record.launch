@@ -1,0 +1,35 @@
+<launch>
+
+  <node
+    pkg="rosbag"
+    type="record"
+    name="clhero_record"
+    output="screen"
+    args="
+    -o $(find clhero_record)/bags/
+    /rosout
+    /clhero_gait_control/legs_command
+    /clhero_gait_control/legs_raw_state
+    /clhero_gait_control/legs_state
+    /clhero_gait_control/legs_state_com
+    /clhero_gait_control/offset_setting
+    /clhero_gait_control/pattern_command
+    /diagnostics
+    /joint_states
+    /rosout
+    /rosout_agg
+    /tf
+    /tf_static
+    /imu
+    /imu_data
+    /imu_node/parameter_descriptions
+    /imu_node/parameter_updates
+    /scan
+    /camera/color/image_raw/compressed
+    /legs_odom
+    /odom
+    /odom_combined
+    /map
+    "/>
+
+</launch>
